@@ -21,3 +21,80 @@ p{
     margin: 1rem 0;
     font-size: 1.5rem;
 }
+
+.board{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell{
+    width: 8rem;
+    height: 8rem;
+    border: .1rem solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell:hover{
+    background: #5b8dfa11;
+    transform: scale(105%);
+}
+
+.circle:before{
+    content: 'O';
+    font-size: 3rem;
+}
+
+.circle{
+    color: #498AFB;
+}
+
+.x:before{
+    content: 'X';
+    font-size: 3rem;
+}
+
+.x{
+    color: #09C372;
+}
+
+.result{
+    display: none;
+    position: fixed;
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    inset: 0; /* tas pats kas top 0, bottom 0, left 0 un right 0 */
+
+    background: rgba(44, 26, 44, 98%);
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 3rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.result.show{
+    display: flex;
+}
+
+.result button{
+    font-size: 2rem;
+    background: #fff;
+    border: .1rem solid #111;
+    padding: .4rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.result button:hover{
+    background: #111;
+    color: #fff;
+    border-color: #fff;
+}
