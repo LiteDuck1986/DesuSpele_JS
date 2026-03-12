@@ -24,9 +24,20 @@ const visi_laucini = document.querySelectorAll('.cell')
 const rezultatu_logs = document.querySelector('#resultBox')
 const rezultatu_teksts = document.querySelector('#resultInfo')
 const atjaunot = document.querySelector('#restartButton')
+const reset = document.querySelector('#resetScore')
 const attelot_speletaju = document.querySelector('#display')
+const punkti_X = document.querySelector('#punkti-X')
+const punkti_O = document.querySelector('#punkti-O')
+
+// Save funkcija
+function saveScore(){
+    localStorage.setItem("score-x", JSON.stringify(x_punkti))
+    localStorage.setItem("score-o", JSON.stringify(o_punkti))
+}
 
 let speletajs_O = false
+let x_punkti = JSON.parse(localStorage.getItem("score-x")) || 0
+let o_punkti = JSON.parse(localStorage.getItem("score-o")) || 0
 
 visi_laucini.forEach(laucins =>{
     laucins.addEventListener('click', veikt_gajienu, {once: true})
@@ -40,9 +51,26 @@ function veikt_gajienu(klikskis){
 
     if(parbaudit_uzvaru(aktivais_speletajs)){
         rezultatu_teksts.textContent = `Spēlētājs ${speletajs_O ? "O" : "X"} uzvarēja!`
+
+        if(aktivais_speletajs == klase_O){
+            o_punkti++
+            punkti_O.textContent = `Spēlētāja O punkti: ${o_punkti}`
+            punkti_X.textContent = `Spēlētāja X punkti: ${x_punkti}`
+        }
+
+        if(aktivais_speletajs == klase_X){
+            x_punkti++
+            punkti_O.textContent = `Spēlētāja O punkti: ${o_punkti}`
+            punkti_X.textContent = `Spēlētāja X punkti: ${x_punkti}`
+        }
+        saveScore()
         rezultatu_logs.classList.add('show');
     }else if(vai_ir_neizskirts()){
         rezultatu_teksts.textContent = "Neizšķirts!"
+
+        punkti_O.textContent = `Spēlētāja O punkti: ${o_punkti}`
+        punkti_X.textContent = `Spēlētāja X punkti: ${x_punkti}`
+
         rezultatu_logs.classList.add('show');
     }else{
         speletajs_O = !speletajs_O
@@ -82,3 +110,12 @@ function vai_ir_neizskirts(){
 atjaunot.addEventListener('click', () =>{
     location.reload()
 })
+
+reset.addEventListener('click', () =>{
+    x_punkti = 0
+    o_punkti = 0
+    
+    saveScore()
+    location.reload()
+})
+

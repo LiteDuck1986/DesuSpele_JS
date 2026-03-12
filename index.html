@@ -9,20 +9,28 @@
 </head>
 <body>
     <h1>DESU spēle</h1>
+    <hr>
     <p>Spēlētāja <span id="display">X</span> gājiens</p>
     <div class="board">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+        <div id="top-left" class="cell"></div>
+        <div id="top-center" class="cell"></div>
+        <div id="top-right" class="cell"></div>
+        <div id="center-left" class="cell"></div>
+        <div id="center" class="cell"></div>
+        <div id="center-right" class="cell"></div>
+        <div id="bottom-left" class="cell"></div>
+        <div id="bottom-center" class="cell"></div>
+        <div id="bottom-right" class="cell"></div>
     </div>
     <div class="result" id="resultBox">
         <div id="resultInfo"></div>
+        <div>
+            <div id="punkti-X"></div>
+            <div id="punkti-O"></div>
+        </div>
+
+        <button id="resetScore">Atiestatīt punktus</button>
+
         <button id="restartButton">Spēlēt vēlreiz</button>
     </div>
 </body>

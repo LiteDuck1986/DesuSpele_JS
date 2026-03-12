@@ -12,7 +12,9 @@ h1{
     color: #fff;
     text-align: center;
     margin-top: 4rem;
+    margin-bottom: 1rem;
     font-size: 4rem;
+
 }
 
 p{
@@ -39,7 +41,7 @@ p{
     width: 8rem;
     height: 8rem;
     border: .1rem solid #eee;
-    border-radius: 1rem;
+    border-radius: .3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,4 +106,50 @@ p{
     background: #111;
     color: #fff;
     border-color: #fff;
+}
+
+#display{
+    color: red;
+}
+
+/* Cell borders */
+
+#top-left{
+    border-left:none;
+    border-top:none;
+}
+
+#top-center{
+    border-top:none;
+}
+
+#top-right{
+    border-right:none;
+    border-top:none;
+}
+
+#center-left{
+    border-left:none;
+}
+
+#center{
+
+}
+
+#center-right{
+    border-right:none;
+}
+
+#bottom-left{
+    border-left:none;
+    border-bottom:none;
+}
+
+#bottom-center{
+    border-bottom:none;
+}
+
+#bottom-right{
+    border-right:none;
+    border-bottom:none;
 }
