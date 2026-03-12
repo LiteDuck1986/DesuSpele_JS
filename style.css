@@ -27,6 +27,11 @@ p{
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(3, auto);
+    background: #5b8dfa11;
+    width: 28rem;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 2rem;
 }
 
 .cell{

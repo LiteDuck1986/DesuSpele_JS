@@ -38,5 +38,29 @@ function veikt_gajienu(klikskis){
 
     laucins.classList.add(aktivais_speletajs)
 
-    speletajs_O = !speletajs_O
+    if(parbaudit_uzvaru(aktivais_speletajs)){
+        rezultatu_teksts.textContent = `Spēlētājs ${aktivais_speletajs} uzvarēja!`
+    }else if(vai_ir_neizskirts()){
+
+    }else{
+        speletajs_O = !speletajs_O
+        attelot_speletaju.textContent = speletajs_O ? "O" : "X"
+    }   
+}
+
+function parbaudit_uzvaru(aktivais){
+    for(let i = 0; i < uzvaras_nosacijumi.length; i++){
+        const kombinacija = uzvaras_nosacijumi[i]
+        const a = kombinacija[0]
+        const b = kombinacija[1]
+        const c = kombinacija[2]
+
+        if( visi_laucini[a].classList.contains(aktivais) &&
+            visi_laucini[b].classList.contains(aktivais) &&
+            visi_laucini[c].classList.contains(aktivais)){
+                return true
+            }
+        
+    }
+    return false
 }
