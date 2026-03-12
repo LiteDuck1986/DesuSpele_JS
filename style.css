@@ -46,7 +46,7 @@ p{
 
 .circle:before{
     content: 'O';
-    font-size: 3rem;
+    font-size: 4.5rem;
 }
 
 .circle{
@@ -55,7 +55,7 @@ p{
 
 .x:before{
     content: 'X';
-    font-size: 3rem;
+    font-size: 4.5rem;
 }
 
 .x{
