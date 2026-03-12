@@ -32,12 +32,14 @@ p{
     padding: 2rem;
     margin: 0 auto;
     border-radius: 2rem;
+    gap: .5rem;
 }
 
 .cell{
     width: 8rem;
     height: 8rem;
     border: .1rem solid #eee;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;

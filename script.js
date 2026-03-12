@@ -39,9 +39,11 @@ function veikt_gajienu(klikskis){
     laucins.classList.add(aktivais_speletajs)
 
     if(parbaudit_uzvaru(aktivais_speletajs)){
-        rezultatu_teksts.textContent = `Spēlētājs ${aktivais_speletajs} uzvarēja!`
+        rezultatu_teksts.textContent = `Spēlētājs ${speletajs_O ? "O" : "X"} uzvarēja!`
+        rezultatu_logs.classList.add('show');
     }else if(vai_ir_neizskirts()){
-
+        rezultatu_teksts.textContent = "Neizšķirts!"
+        rezultatu_logs.classList.add('show');
     }else{
         speletajs_O = !speletajs_O
         attelot_speletaju.textContent = speletajs_O ? "O" : "X"
@@ -64,3 +66,19 @@ function parbaudit_uzvaru(aktivais){
     }
     return false
 }
+
+function vai_ir_neizskirts(){
+    for(let i = 0; i < visi_laucini.length; i++){
+        const laucins = visi_laucini[i]
+
+        if(!laucins.classList.contains(klase_X) && !laucins.classList.contains(klase_O)){
+            return false
+        }
+    }
+
+    return true
+}
+
+atjaunot.addEventListener('click', () =>{
+    location.reload()
+})
